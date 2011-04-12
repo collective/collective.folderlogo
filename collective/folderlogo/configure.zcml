@@ -9,6 +9,7 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <include package="Products.CMFCore" />
+  <include package=".adapter" />
   <include package=".browser" />
 
   <genericsetup:registerProfile
@@ -19,13 +20,13 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-<!--  <genericsetup:registerProfile-->
-<!--    name="uninstall"-->
-<!--    title="Uninstall Profile for collective.folderlang"-->
-<!--    directory="profiles/uninstall"-->
-<!--    description="Removes collective.folderlang"-->
-<!--    provides="Products.GenericSetup.interfaces.EXTENSION"-->
-<!--    for="Products.CMFPlone.interfaces.IPloneSiteRoot"-->
-<!--    />-->
+  <genericsetup:registerProfile
+    name="uninstall"
+    title="Uninstall Profile for collective.folderlogo"
+    directory="profiles/uninstall"
+    description="Removes collective.folderlogo"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    />
 
 </configure>

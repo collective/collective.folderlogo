@@ -7,16 +7,45 @@
       i18n:domain="collective.folderlogo">
   <body>
     <div metal:fill-slot="prefs_configlet_main">
-      <h1 class="documentFirstHeading" tal:content="view/label">View Title</h1>
-      <div id="layout-contents">
+      <h1 class="documentFirstHeading" i18n:translate="">Folder Logo Setting</h1>
+      <div id="layout-contents" tal:define="properties view/properties">
         <form method="post" tal:attributes="action view/current_url">
-          <label for="form-widgets-logo_id" class="horizontal" i18n:translate="">
-            Logo ID
-          </label>
-          <input id="logo_id"
-                 name="form.widgets.logo_id"
-                 tal:attributes="value view/logo_id"
-                 type="text" />
+          <div class="field">
+            <label for="logo_id" i18n:translate="">
+              Logo ID
+            </label>
+            <div class="formHelp" i18n:translate="">
+              Image ID for Logo.
+            </div>
+            <input id="logo_id"
+                   name="logo_id"
+                   tal:attributes="value properties/logo_id"
+                   type="text" />
+          </div>
+          <div class="field">
+            <label for="background_color" i18n:translate="">
+              Background Color
+            </label>
+            <div class="formHelp" i18n:translate="">
+              Background Color for styling portal-header.
+            </div>
+            <input id="background_color"
+                   name="background_color"
+                   tal:attributes="value properties/background_color"
+                   type="text" />
+          </div>
+          <div class="field">
+            <label for="background_image_id" i18n:translate="">
+              Background Image ID
+            </label>
+            <div class="formHelp" i18n:translate="">
+              Background Image ID for styling portal-header.
+            </div>
+            <input id="background_image_id"
+                   name="background_image_id"
+                   tal:attributes="value properties/background_image_id"
+                   type="text" />
+          </div>
           <input name="form.buttons.update"
                  class="standalone"
                  value="Update"

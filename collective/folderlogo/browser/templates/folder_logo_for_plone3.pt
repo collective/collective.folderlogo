@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xml:lang="en" lang="en"
+      metal:use-macro="context/prefs_main_template/macros/master"
+      i18n:domain="collective.folderlogo">
+  <body>
+    <div metal:fill-slot="prefs_configlet_main">
+      <h1 class="documentFirstHeading" tal:content="view/label">View Title</h1>
+      <div id="layout-contents">
+        <form method="post" tal:attributes="action view/current_url">
+          <label for="form-widgets-logo_id" class="horizontal" i18n:translate="">
+            Logo ID
+          </label>
+          <input id="logo_id"
+                 name="form.widgets.logo_id"
+                 tal:attributes="value view/logo_id"
+                 type="text" />
+          <input name="form.buttons.update"
+                 class="standalone"
+                 value="Update"
+                 i18n:attributes="value"
+                 type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

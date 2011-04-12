@@ -1,0 +1,51 @@
+Defines and setup
+------------------
+    >>> portal_url = portal.absolute_url()
+
+Setting up.
+----
+    >>> try:
+    ...     from Testing.testbrowser import Browser
+    ... except ImportError:
+    ...     from Products.Five.testbrowser import Browser
+    >>> browser = Browser()
+
+For debugging.
+--------------
+    >>> browser.handleErrors = True
+    >>> portal.error_log._ignored_exceptions = ()
+
+Log in as the portal owner.
+---------------------------
+    >>> browser.open(portal_url)
+    >>> from Products.PloneTestCase.setup import portal_owner, default_password
+    >>> browser.open(portal_url + '/login_form?came_from=' + portal_url)
+    >>> browser.getControl(name='__ac_name').value = portal_owner
+    >>> browser.getControl(name='__ac_password').value = default_password
+    >>> browser.getControl(name='submit').click()
+
+    >>> browser.getLink('Site Setup').click()
+    >>> browser.getLink('Folder Logo').click()
+    >>> 'value="logo"' in browser.contents
+    True
+    >>> browser.getControl(name="form.widgets.logo_id").value = 'logo_name'
+    >>> browser.getControl(name="form.buttons.update").click()
+    >>> 'value="logo_name"' in browser.contents
+    True
+    >>> 'src="http://nohost/plone/logo.png"' in browser.contents or 'src="http://nohost/plone/logo.jpg"' in browser.contents 
+    True
+
+Add Image to portal
+----
+    >>> browser.open(portal_url)
+    >>> browser.getLink(id='image').click()
+    >>> import StringIO
+    >>> dummy_image = StringIO.StringIO('Dummy Image')
+    >>> browser.getControl(name='title').value = "logo_name"
+    >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image, filename='logo_name')
+    >>> browser.getControl(name="form.button.save").click()
+    >>> browser.open(portal_url)
+    >>> 'src="http://nohost/plone/logo.png"' in browser.contents or 'src="http://nohost/plone/logo.jpg"' in browser.contents
+    False
+    >>> 'src="http://nohost/plone/logo_name/image"' in browser.contents
+    True

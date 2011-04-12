@@ -12,4 +12,19 @@
     permission="cmf.ManagePortal"
     />
 
+  <!-- The Header -->
+  <browser:viewlet
+    name="folderlogo.header"
+    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+    class=".viewlets.PortalHeaderViewlet"
+    permission="zope2.View" />
+
+
+  <!-- The logo -->
+  <browser:viewlet
+    name="folderlogo.logo"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    class=".viewlets.LogoViewlet"
+    permission="zope2.View" />
+
 </configure>

@@ -69,9 +69,16 @@ Add Image to portal
     >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image, filename='logo_name')
     >>> browser.getControl(name="form.button.save").click()
     >>> browser.open(portal_url)
-    >>> 'src="http://nohost/plone/logo.png"' in browser.contents or 'src="http://nohost/plone/logo.jpg"' in browser.contents
-    False
+    >>> open('/tmp/testbrowser.html', 'w').write(browser.contents)
     >>> 'src="http://nohost/plone/logo_name/image"' in browser.contents
     True
-    >>> 'style="background: black"' in browser.contents
+    >>> 'style="background: black no-repeat;"' in browser.contents
+    True
+
+    >>> browser.getLink(id='image').click()
+    >>> import StringIO
+    >>> dummy_image = StringIO.StringIO('Dummy Image')
+    >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image, filename='background_image')
+    >>> browser.getControl(name="form.button.save").click()
+    >>> 'style="background: black url(/plone/background_image) no-repeat;"' in browser.contents
     True

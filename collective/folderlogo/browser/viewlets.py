@@ -1,5 +1,4 @@
 from Acquisition import aq_chain, aq_inner, aq_parent
-#from zope.annotation.interfaces import IAnnotations
 from Products.ATContentTypes.interface.image import IATImage
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.interfaces import IFolderish

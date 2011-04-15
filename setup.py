@@ -9,7 +9,8 @@ version = read('collective', 'folderlogo', 'version.txt')[:-1]
 long_description = (
     open("README.txt").read() + "\n" +
     open(os.path.join("docs", "HISTORY.txt")).read() + "\n" +
-    open(os.path.join("docs", "INSTALL.txt")).read()
+    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
+    open(os.path.join("docs", "CREDITS.txt")).read()
     )
 
 setup(name='collective.folderlogo',
@@ -25,7 +26,7 @@ setup(name='collective.folderlogo',
       keywords='',
       author='Taito Horiuchi',
       author_email='taito.horiuchi@gmail.com',
-      url='http://svn.plone.org/svn/collective/',
+      url='http://pypi.python.org/pypi/collective.folderlogo',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],

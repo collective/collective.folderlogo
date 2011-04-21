@@ -16,10 +16,6 @@ class TestSetup(FolderLogoTestCase):
     def test_is_folderlogo_installed(self):
         self.failUnless(self.installer.isProductInstalled('collective.folderlogo'))
 
-#    ## Annotations
-#    def test_portal_annotations(self):
-#        self.failUnless('collective.folderlogo.imageid' in self.portal_annotations.keys())
-
     ## controlpanel.xml
     def test_controlpanel(self):
         ids = [action.id for action in self.controlpanel.listActions()]
@@ -37,7 +33,6 @@ class TestSetup(FolderLogoTestCase):
         self.installer.uninstallProducts(['collective.folderlogo'])
         self.failIf(self.installer.isProductInstalled('collective.folderlogo'))
         self.failIf(hasattr(self.properties, 'folder_logo_properties'))
-#        self.failUnless('collective.folderlogo.imageid' not in self.portal_annotations.keys())
         ids = [action.id for action in self.controlpanel.listActions()]
         self.failUnless('folder_logo' not in ids)
 

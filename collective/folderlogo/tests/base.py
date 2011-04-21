@@ -14,7 +14,6 @@ def setup_collective_folderlogo():
 
     import collective.folderlogo
     zcml.load_config('configure.zcml', collective.folderlogo)
-#    zcml.load_config('overrides.zcml', collective.folderlogo)
     fiveconfigure.debug_mode = False
 
     ztc.installPackage('collective.folderlogo')

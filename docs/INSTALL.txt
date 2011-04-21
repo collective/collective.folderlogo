@@ -12,17 +12,6 @@ recipe to manage packages:
         ...
         collective.folderlogo
 
-* Tell the plone.recipe.zope2instance recipe to install a ZCML slug::
-
-    [instance]
-    recipe = plone.recipe.zope2instance
-    ...
-    zcml =
-        collective.folderlogo
-
 * Re-run buildout, e.g. with::
 
     $ ./bin/buildout
-
-You can skip the ZCML slug if you are going to explicitly include the package
-from another package's configure.zcml file.

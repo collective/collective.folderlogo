@@ -20,13 +20,4 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <genericsetup:registerProfile
-    name="uninstall"
-    title="Uninstall Profile for collective.folderlogo"
-    directory="profiles/uninstall"
-    description="Removes collective.folderlogo"
-    provides="Products.GenericSetup.interfaces.EXTENSION"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    />
-
 </configure>

@@ -17,6 +17,7 @@
     name="folderlogo.header"
     manager="plone.app.layout.viewlets.interfaces.IPortalTop"
     class=".viewlets.PortalHeaderViewlet"
+    layer="collective.folderlogo.interfaces.IFolderLogoLayer"
     permission="zope2.View" />
 
 
@@ -25,6 +26,7 @@
     name="folderlogo.logo"
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
     class=".viewlets.LogoViewlet"
+    layer="collective.folderlogo.interfaces.IFolderLogoLayer"
     permission="zope2.View" />
 
 </configure>

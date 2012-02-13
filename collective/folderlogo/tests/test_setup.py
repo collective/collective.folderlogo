@@ -1,43 +1,47 @@
-import unittest
-from zope.annotation.interfaces import IAnnotations
+from collective.folderlogo.tests.base import IntegrationTestCase
 from Products.CMFCore.utils import getToolByName
-from collective.folderlogo.tests.base import FolderLogoTestCase
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
-class TestSetup(FolderLogoTestCase):
 
-    def afterSetUp(self):
-        self.catalog = getToolByName(self.portal, 'portal_catalog')
-        self.controlpanel = getToolByName(self.portal, 'portal_controlpanel')
-        self.portal_annotations = IAnnotations(self.portal)
-        self.installer = getToolByName(self.portal, 'portal_quickinstaller')
-        self.properties = getToolByName(self.portal, 'portal_properties')
-        self.lfp = getattr(self.properties, 'folder_logo_properties')
+class TestCase(IntegrationTestCase):
+    """TestCase for Plone setup."""
+
+    def setUp(self):
+        self.portal = self.layer['portal']
 
     def test_is_folderlogo_installed(self):
-        self.failUnless(self.installer.isProductInstalled('collective.folderlogo'))
+        installer = getToolByName(self.portal, 'portal_quickinstaller')
+        self.failUnless(installer.isProductInstalled('collective.folderlogo'))
 
     ## controlpanel.xml
     def test_controlpanel(self):
-        ids = [action.id for action in self.controlpanel.listActions()]
+        controlpanel = getToolByName(self.portal, 'portal_controlpanel')
+        ids = [action.id for action in controlpanel.listActions()]
         self.failUnless('folder_logo' in ids)
 
     ## propertiestool.xm
     def test_propertiestool(self):
-        self.assertEqual('Folder Logo Properties', self.lfp.getProperty('title'))
-        self.assertEqual('logo', self.lfp.getProperty('logo_id'))
-        self.assertEqual('transparent', self.lfp.getProperty('background_color'))
-        self.assertEqual('background', self.lfp.getProperty('background_image_id'))
+        properties = getToolByName(self.portal, 'portal_properties')
+        lfp = getattr(properties, 'folder_logo_properties')
+        self.assertEqual('Folder Logo Properties', lfp.getProperty('title'))
+        self.assertEqual('logo', lfp.getProperty('logo_id'))
+        self.assertEqual('transparent', lfp.getProperty('background_color'))
+        self.assertEqual('background', lfp.getProperty('background_image_id'))
+
+    ## browserlayer.xml
+    def test_browserlayer(self):
+        from collective.folderlogo.interfaces import IFolderLogoLayer
+        from plone.browserlayer import utils
+        self.failUnless(IFolderLogoLayer in utils.registered_layers())
 
     ## Uninstalling
     def test_uninstall(self):
-        self.installer.uninstallProducts(['collective.folderlogo'])
-        self.failIf(self.installer.isProductInstalled('collective.folderlogo'))
-        self.failIf(hasattr(self.properties, 'folder_logo_properties'))
-        ids = [action.id for action in self.controlpanel.listActions()]
+        installer = getToolByName(self.portal, 'portal_quickinstaller')
+        installer.uninstallProducts(['collective.folderlogo'])
+        self.failIf(installer.isProductInstalled('collective.folderlogo'))
+        properties = getToolByName(self.portal, 'portal_properties')
+        self.failIf(hasattr(properties, 'folder_logo_properties'))
+        controlpanel = getToolByName(self.portal, 'portal_controlpanel')
+        ids = [action.id for action in controlpanel.listActions()]
         self.failUnless('folder_logo' not in ids)
-
-
-def test_suite():
-    suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(TestSetup))
-    return suite

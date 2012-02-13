@@ -1,6 +1,5 @@
-*.pyc
-*.egg-info
 *.egg
-dist
+*.egg-info
 *.html
-*.svn
+*.pyc
+dist

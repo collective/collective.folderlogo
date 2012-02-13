@@ -1,23 +1,24 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:cmf="http://namespaces.zope.org/cmf"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    i18n_domain="collective.folderlogo">
+  i18n_domain="collective.folderlogo"
+  xmlns:cmf="http://namespaces.zope.org/cmf"
+  xmlns:five="http://namespaces.zope.org/five"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns="http://namespaces.zope.org/zope"
+    >
 
+  <includeDependencies package="." />
   <five:registerPackage package="." initialize=".initialize" />
 
-  <include package="Products.CMFCore" />
   <include package=".adapter" />
   <include package=".browser" />
 
   <genericsetup:registerProfile
-      name="default"
-      title="Folder Logo"
-      directory="profiles/default"
-      description='Easily add and change logos in different folders.'
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
+    description='Easily add and change logos in different folders.'
+    directory="profiles/default"
+    name="default"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    title="Folder Logo"
+    />
 
 </configure>

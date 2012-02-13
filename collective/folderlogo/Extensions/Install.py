@@ -1,7 +1,8 @@
+from Products.CMFCore.utils import getToolByName
 from StringIO import StringIO
 from zope.annotation.interfaces import IAnnotations
 from zope.component import getSiteManager
-from Products.CMFCore.utils import getToolByName
+
 
 def uninstall(self):
     out = StringIO()

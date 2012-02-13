@@ -1,9 +1,10 @@
 from Acquisition import aq_inner
-from zope.component import adapts
-from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.properties import ISimpleItemWithProperties
 from collective.folderlogo.interfaces import IFolderLogoProperties
+from zope.component import adapts
+from zope.interface import implements
+
 
 class FolderLogoProperties(object):
 
@@ -24,5 +25,3 @@ class FolderLogoProperties(object):
             self.__dict__[attr] = value
         else:
             self.context._updateProperty(attr, value)
-
-

@@ -1,34 +1,7 @@
-Defines and setup
-------------------
-    >>> portal_url = portal.absolute_url()
+Log in as the portal owner::
 
-Setting up.
-----
-    >>> try:
-    ...     from Testing.testbrowser import Browser
-    ... except ImportError:
-    ...     from Products.Five.testbrowser import Browser
-    >>> browser = Browser()
-
-For debugging.
---------------
-    >>> browser.handleErrors = True
-    >>> portal.error_log._ignored_exceptions = ()
-
-Log in as the portal owner.
----------------------------
-    >>> try:
-    ...     browser.open(portal_url)
-    ... except:
-    ...     print portal.error_log.getLogEntries()[0]['tb_text']
-    ...     import pdb; pdb.set_trace()
-
-    >>> browser.open(portal_url)
-    >>> from Products.PloneTestCase.setup import portal_owner, default_password
-    >>> browser.open(portal_url + '/login_form?came_from=' + portal_url)
-    >>> browser.getControl(name='__ac_name').value = portal_owner
-    >>> browser.getControl(name='__ac_password').value = default_password
-    >>> browser.getControl(name='submit').click()
+    >>> from plone.app.testing import TEST_USER_NAME, TEST_USER_PASSWORD
+    >>> browser.login(TEST_USER_NAME, TEST_USER_PASSWORD)
 
     >>> browser.getLink('Site Setup').click()
 

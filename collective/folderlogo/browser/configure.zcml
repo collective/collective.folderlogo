@@ -6,45 +6,19 @@
   xmlns="http://namespaces.zope.org/zope"
   >
 
-  <browser:page
-    class=".template.FolderLogoView"
-    for="Products.CMFCore.interfaces.ISiteRoot"
-    name="folder-logo"
-    permission="cmf.ManagePortal"
-    layer="collective.folderlogo.interfaces.IFolderLogoLayer"
-    />
-
-  <!-- The Header -->
-<!--   <browser:viewlet
-    name="folderlogo.header"
-    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+  <browser:viewlet
     class=".viewlets.PortalHeaderViewlet"
     layer="collective.folderlogo.interfaces.IFolderLogoLayer"
-    permission="zope2.View"
-    /> -->
-
-  <browser:viewlet
+    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
     name="plone.header"
-    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
-    class=".viewlets.PortalHeaderViewlet"
-    layer="collective.folderlogo.interfaces.IFolderLogoLayer"
     permission="zope2.View"
     />
 
-  <!-- The logo -->
-<!--   <browser:viewlet
-    name="folderlogo.logo"
-    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-    class=".viewlets.LogoViewlet"
-    layer="collective.folderlogo.interfaces.IFolderLogoLayer"
-    permission="zope2.View"
-    /> -->
-
   <browser:viewlet
-    name="plone.logo"
-    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
     class=".viewlets.LogoViewlet"
     layer="collective.folderlogo.interfaces.IFolderLogoLayer"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    name="plone.logo"
     permission="zope2.View"
     />
 

@@ -1,0 +1,16 @@
+<configure
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns="http://namespaces.zope.org/zope"
+  >
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="1"
+    handler="collective.folderlogo.upgrades.upgrade_0_to_1"
+    profile="collective.folderlogo:default"
+    sortkey="1"
+    source="0"
+    title="Move configuration from properties to registry records."
+    />
+
+</configure>

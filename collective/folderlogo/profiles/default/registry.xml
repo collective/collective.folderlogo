@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<registry>
+  <record name="collective.folderlogo.logo_id">
+    <field type="plone.registry.field.TextLine">
+      <title>Logo ID</title>
+      <description></description>
+    </field>
+    <value>logo</value>
+  </record>
+  <record name="collective.folderlogo.background_color">
+    <field type="plone.registry.field.TextLine">
+      <title>Background Color</title>
+      <description></description>
+    </field>
+    <value>transparent</value>
+  </record>
+  <record name="collective.folderlogo.background_image_id">
+    <field type="plone.registry.field.TextLine">
+      <title>Background Image ID</title>
+      <description></description>
+    </field>
+    <value>background</value>
+  </record>
+</registry>

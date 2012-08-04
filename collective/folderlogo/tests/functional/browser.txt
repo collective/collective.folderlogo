@@ -1,0 +1,43 @@
+Log in as Manager::
+
+    >>> browser.login(TEST_USER_NAME, TEST_USER_PASSWORD)
+
+Go to Configuration page::
+
+    >>> browser.open('/portal_registry')
+
+    >>> browser.open('/portal_registry/edit/collective.folderlogo.logo_id')
+    >>> browser.getControl(name="form.widgets.value").value = 'logo_name'
+    >>> browser.getControl(name="form.buttons.save").click()
+
+    >>> browser.open('/portal_registry/edit/collective.folderlogo.background_color')
+    >>> browser.getControl(name="form.widgets.value").value = 'black'
+    >>> browser.getControl(name="form.buttons.save").click()
+
+    >>> browser.open('/portal_registry/edit/collective.folderlogo.background_image_id')
+    >>> browser.getControl(name="form.widgets.value").value = 'background_image'
+    >>> browser.getControl(name="form.buttons.save").click()
+
+Add Image to portal::
+
+    >>> browser.open('/')
+    >>> browser.getLink(id='image').click()
+    >>> import StringIO
+    >>> dummy_image = StringIO.StringIO('Dummy Image')
+    >>> browser.getControl(name='title').value = "logo_name"
+    >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image, filename='logo_name')
+    >>> browser.getControl(name="form.button.save").click()
+
+    >>> browser.open('/')
+    >>> 'src="http://nohost/plone/logo_name/image"' in browser.contents
+    True
+    >>> 'style="background: black no-repeat;"' in browser.contents
+    True
+
+    >>> browser.getLink(id='image').click()
+    >>> import StringIO
+    >>> dummy_image = StringIO.StringIO('Dummy Image')
+    >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image, filename='background_image')
+    >>> browser.getControl(name="form.button.save").click()
+    >>> 'style="background: black url(/plone/background_image) no-repeat;"' in browser.contents
+    True

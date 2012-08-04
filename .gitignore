@@ -2,4 +2,6 @@
 *.egg-info
 *.html
 *.pyc
+.long-description.html
+collective/folderlogo/docs/_build/*
 dist

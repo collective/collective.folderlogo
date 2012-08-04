@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<object name="portal_properties" meta_type="Plone Properties Tool">
- <object name="folder_logo_properties" meta_type="Plone Property Sheet">
-  <property name="title">Folder Logo Properties</property>
-  <property name="logo_id" type="string">logo</property>
-  <property name="background_color" type="string">transparent</property>
-  <property name="background_image_id" type="string">background</property>
- </object>
-</object>

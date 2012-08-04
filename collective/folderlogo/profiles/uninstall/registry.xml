@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<registry>
+  <record name="collective.folderlogo.logo_id" delete="true" />
+  <record name="collective.folderlogo.background_color" delete="true" />
+  <record name="collective.folderlogo.background_image_id" delete="true" />
+</registry>

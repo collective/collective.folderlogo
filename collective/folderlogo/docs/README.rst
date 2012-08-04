@@ -1,5 +1,7 @@
-Introduction
-============
+================================
+collecive.folderlogo
+================================
+
 collective.folderlogo changes logo images and their background under plone site or folders easily through the web.
 
 Currentry Tested With
@@ -25,3 +27,22 @@ Changing ID of images
     Logo ID, background color and image ID can be changed here.
 
 3. Update
+
+Tested with
+-----------
+* Plone-4.2
+
+* For older version and python-2.6, use version 0.4.1.
+
+
+Further Documentation URL
+-------------------------
+
+`http://packages.python.org/collecive.folderlogo/
+<http://packages.python.org/collecive.folderlogo/>`_
+
+Repository URL
+--------------
+
+`https://github.com/collective/collecive.folderlogo/
+<https://github.com/collective/collecive.folderlogo/>`_

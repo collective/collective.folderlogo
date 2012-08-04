@@ -1,3 +1,0 @@
-Credits
-=======
-* Pekka Saari from the Finnish Association for Nature Conservation (Suomen Luonnonsuojeluliitto) who uses this package in their site: http://www.sll.fi

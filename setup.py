@@ -4,12 +4,15 @@ from setuptools import setup
 import os
 
 
+def read(*rnames):
+    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+
+
 long_description = (
-    open("README.txt").read() + "\n" +
-    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
-    open(os.path.join("docs", "HISTORY.txt")).read() + "\n" +
-    open(os.path.join("docs", "CREDITS.txt")).read()
-)
+    read('collective', 'folderlogo', 'docs', 'README.rst') + "\n" +
+    read('collective', 'folderlogo', 'docs', 'HISTORY.rst') + "\n" +
+    read('collective', 'folderlogo', 'docs', 'CONTRIBUTORS.rst') + "\n" +
+    read('collective', 'folderlogo', 'docs', 'CREDITS.rst'))
 
 
 setup(

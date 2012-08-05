@@ -18,6 +18,11 @@ def upgrade_0_to_1(context, logger=None):
     controlpanel.deleteActions([actids.index('folder_logo')])
     logger.info('Removed folder_logo configlet.')
 
+    setup = getToolByName(context, 'portal_setup')
+    logger.info('Reimporting registry.xml.')
+    setup.runImportStepFromProfile(PROFILE_ID, 'plone.app.registry', run_dependencies=False, purge_old=False)
+    logger.info('Reimported registry.xml.')
+
     properties = getToolByName(context, 'portal_properties')
     if hasattr(properties, 'folder_logo_properties'):
         logger.info('Move properties to registry records.')

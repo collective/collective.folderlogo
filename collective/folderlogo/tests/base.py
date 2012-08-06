@@ -20,6 +20,7 @@ class CollectiveFolderlogoLayer(PloneSandboxLayer):
         # Load ZCML
         import collective.folderlogo
         self.loadZCML(package=collective.folderlogo)
+        z2.installProduct(app, 'collective.folderlogo')
 
     def setUpPloneSite(self, portal):
         """Set up Plone."""

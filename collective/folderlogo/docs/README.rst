@@ -28,11 +28,11 @@ Changing ID of images
 Further Documentation URL
 -------------------------
 
-`http://packages.python.org/collecive.folderlogo/
-<http://packages.python.org/collecive.folderlogo/>`_
+`http://packages.python.org/collective.folderlogo/
+<http://packages.python.org/collective.folderlogo/>`_
 
 Repository URL
 --------------
 
-`https://github.com/collective/collecive.folderlogo/
-<https://github.com/collective/collecive.folderlogo/>`_
+`https://github.com/collective/collective.folderlogo/
+<https://github.com/collective/collective.folderlogo/>`_

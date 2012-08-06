@@ -1,1 +1,1 @@
-See `collecive/folderlogo/docs/README.rst <https://github.com/collective/collecive.folderlogo/blob/master/collecive/folderlogo/docs/README.rst>`_
+See `collective/folderlogo/docs/README.rst <https://github.com/collective/collective.folderlogo/blob/master/collective/folderlogo/docs/README.rst>`_

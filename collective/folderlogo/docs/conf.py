@@ -34,7 +34,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'collecive.folderlogo'
+project = u'collective.folderlogo'
 copyright = u'2012, Taito Horiuchi'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -158,7 +158,7 @@ html_last_updated_fmt = '%d.%m.%Y %H:%M'
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'collecive.folderlogodoc'
+htmlhelp_basename = 'collective.folderlogodoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -172,7 +172,7 @@ latex_paper_size = 'a4'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'collecive.folderlogo.tex', u'collecive.folderlogo Documentation',
+  ('index', 'collective.folderlogo.tex', u'collective.folderlogo Documentation',
    u'Taito Horiuchi', 'manual'),
 ]
 
@@ -208,6 +208,6 @@ man_pages = [
     (
         'index',
         'todo',
-        u'collecive.folderlogo Documentation',
+        u'collective.folderlogo Documentation',
         [u'Taito Horiuchi'],
         1)]

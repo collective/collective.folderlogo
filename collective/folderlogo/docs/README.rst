@@ -4,9 +4,10 @@ collective.folderlogo
 
 collective.folderlogo changes logo images and their background under plone site or folders easily through the web.
 
-Tested with
------------
-* Plone-4.2
+Currently tested with
+---------------------
+
+* Plone-4.2.2 [taito]
 
 * For older versions and python-2.6, use version 0.4.1.
 

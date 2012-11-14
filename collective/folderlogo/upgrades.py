@@ -14,7 +14,7 @@ def upgrade_0_to_1(context, logger=None):
 
     logger.info('Remove folder_logo configlet.')
     controlpanel = getToolByName(context, 'portal_controlpanel')
-    actids= [o.id for o in controlpanel.listActions()]
+    actids = [o.id for o in controlpanel.listActions()]
     controlpanel.deleteActions([actids.index('folder_logo')])
     logger.info('Removed folder_logo configlet.')
 
@@ -29,7 +29,7 @@ def upgrade_0_to_1(context, logger=None):
         from plone.registry.interfaces import IRegistry
         from zope.component import getUtility
         registry = getUtility(IRegistry)
-        flp = getattr(properties,'folder_logo_properties')
+        flp = getattr(properties, 'folder_logo_properties')
         registry['collective.folderlogo.logo_id'] = unicode(flp.getProperty('logo_id', 'logo'))
         registry['collective.folderlogo.background_color'] = unicode(flp.getProperty('background_color', 'transparent'))
         registry['collective.folderlogo.background_image_id'] = unicode(flp.getProperty('background_image_id', 'background'))

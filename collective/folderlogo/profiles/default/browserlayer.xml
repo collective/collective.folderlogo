@@ -1,5 +1,7 @@
+<?xml version="1.0"?>
 <layers>
-    <layer name="folderlogolayer" 
-           interface="collective.folderlogo.interfaces.IFolderLogoLayer" />
+  <layer
+    name="folderlogolayer"
+    interface="collective.folderlogo.interfaces.IFolderLogoLayer" />
 </layers>
 

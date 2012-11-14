@@ -38,12 +38,11 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'Plone>=4.1',
+        'Plone>=4.2',
         'hexagonit.testing',
         'plone.app.registry',
         'plone.browserlayer',
-        'setuptools',
-        'zope.i18nmessageid'],
+        'setuptools'],
     entry_points="""
     # -*- Entry points: -*-
 

@@ -1,7 +1,6 @@
 <configure
   xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-  xmlns="http://namespaces.zope.org/zope"
-  >
+  xmlns="http://namespaces.zope.org/zope">
 
   <genericsetup:upgradeStep
     description=""

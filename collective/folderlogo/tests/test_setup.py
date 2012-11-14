@@ -1,5 +1,5 @@
-from collective.folderlogo.tests.base import IntegrationTestCase
 from Products.CMFCore.utils import getToolByName
+from collective.folderlogo.tests.base import IntegrationTestCase
 
 
 class TestCase(IntegrationTestCase):

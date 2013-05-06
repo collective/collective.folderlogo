@@ -1,6 +1,13 @@
 Changelog
 ---------
 
+1.2 (2013-05-06)
+================
+
+- Moved test packages to extras_require. [taito]
+- Tested with Plone-4.3. [taito]
+- Added testing integration to Travis CI. [taito]
+
 1.1 (2012-11-14)
 ================
 

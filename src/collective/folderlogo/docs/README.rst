@@ -7,7 +7,7 @@ collective.folderlogo changes logo images and their background under plone site 
 Currently tested with
 ---------------------
 
-* Plone-4.2.2 [taito]
+* Plone-4.3 [taito]
 
 * For older versions and python-2.6, use version 0.4.1.
 
@@ -25,15 +25,3 @@ Changing ID of images
 
 **Background Color**
     Needs to be available for CSS styling background-color like: ``transparent``, ``#ffffff``.
-
-Further Documentation URL
--------------------------
-
-`http://packages.python.org/collective.folderlogo/
-<http://packages.python.org/collective.folderlogo/>`_
-
-Repository URL
---------------
-
-`https://github.com/collective/collective.folderlogo/
-<https://github.com/collective/collective.folderlogo/>`_

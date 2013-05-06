@@ -23,9 +23,9 @@ Add Image to portal::
     >>> browser.open('/')
     >>> browser.getLink(id='image').click()
     >>> import StringIO
-    >>> dummy_image = StringIO.StringIO('Dummy Image')
+    >>> logo_image = StringIO.StringIO('Logo Image')
     >>> browser.getControl(name='title').value = "logo_name"
-    >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image, filename='logo_name')
+    >>> browser.getControl(name='image_file').mech_control.add_file(logo_image, filename='logo_name.png')
     >>> browser.getControl(name="form.button.save").click()
 
     >>> browser.open('/')
@@ -36,8 +36,9 @@ Add Image to portal::
 
     >>> browser.getLink(id='image').click()
     >>> import StringIO
-    >>> dummy_image = StringIO.StringIO('Dummy Image')
-    >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image, filename='background_image')
+    >>> background_image = StringIO.StringIO('Background Image')
+    >>> browser.getControl(name='title').value = "background_image"
+    >>> browser.getControl(name='image_file').mech_control.add_file(background_image, filename='background_image.png')
     >>> browser.getControl(name="form.button.save").click()
     >>> 'style="background: black url(/plone/background_image) no-repeat;"' in browser.contents
     True

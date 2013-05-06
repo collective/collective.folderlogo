@@ -9,10 +9,9 @@ def read(*rnames):
 
 
 long_description = (
-    read('collective', 'folderlogo', 'docs', 'README.rst') + "\n" +
-    read('collective', 'folderlogo', 'docs', 'HISTORY.rst') + "\n" +
-    read('collective', 'folderlogo', 'docs', 'CONTRIBUTORS.rst') + "\n" +
-    read('collective', 'folderlogo', 'docs', 'CREDITS.rst'))
+    read('src', 'collective', 'folderlogo', 'docs', 'README.rst') + "\n" +
+    read('src', 'collective', 'folderlogo', 'docs', 'HISTORY.rst') + "\n" +
+    read('src', 'collective', 'folderlogo', 'docs', 'CREDITS.rst'))
 
 
 setup(
@@ -20,8 +19,6 @@ setup(
     version='1.1',
     description="Easily add and change logos in different folders for Plone.",
     long_description=long_description,
-    # Get more strings from
-    # http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 4.2",
@@ -33,16 +30,15 @@ setup(
     author_email='taito.horiuchi@gmail.com',
     url='https://github.com/collective/collective.folderlogo',
     license='BSD',
-    packages=find_packages(exclude=['ez_setup']),
+    packages=find_packages('src', exclude=['ez_setup']),
+    package_dir={'': 'src'},
     namespace_packages=['collective'],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'Plone>=4.2',
-        'hexagonit.testing',
-        'plone.app.registry',
-        'plone.browserlayer',
+        'Products.CMFPlone',
         'setuptools'],
+    extras_require={'test': ['hexagonit.testing']},
     entry_points="""
     # -*- Entry points: -*-
 

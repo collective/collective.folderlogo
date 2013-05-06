@@ -3,5 +3,5 @@
 *.html
 *.pyc
 .long-description.html
-collective/folderlogo/docs/_build/*
+src/collective/folderlogo/docs/_build/*
 dist

@@ -16,7 +16,7 @@ long_description = (
 
 setup(
     name='collective.folderlogo',
-    version='1.1',
+    version='1.2',
     description="Easily add and change logos in different folders for Plone.",
     long_description=long_description,
     classifiers=[
